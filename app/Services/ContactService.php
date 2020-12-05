@@ -8,13 +8,15 @@ use App\Contact;
 class ContactService
 {
 	
-	public static function findByName(): Contact
+	protected $names = array("NombrePrueba","NomTest","NomPruebaDos");
+
+	public static function findByName($firstName): Contact
 	{
-		// queries to the db
+		return in_array($firstName,$names)?true:false;
 	}
 
 	public static function validateNumber(string $number): bool
 	{
-		// logic to validate numbers
+		return (is_numeric($number) && $number > 0 && $number == round($number, 0)) ? true : false;		
 	}
 }

@@ -6,8 +6,11 @@ namespace App;
 class Call
 {
 	
+	public string $call;
+
+	
 	function __construct()
 	{
-		# code...
+		return trim("$this->call");
 	}
 }
